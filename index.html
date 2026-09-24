@@ -18,24 +18,54 @@
     .case-study { font-size: .85em; flex: 1; text-align: center; margin-bottom: 1px; }
     .case-study img { margin-top: 1px; max-width: 100%; height: auto; border: 1px solid #ccc; }
     .caption { font-size: 0.75em;  color: #555;  font-style: italic; margin-top: 10px; }
-    .about-content {
-                      display: flex;
-                      align-items: flex-start;
-                      gap: 40px;
-                    }
-
-    .about-image img {
-                          width: 280px;
-                          height: auto;
-                          border-radius: 12px;
-                          position: relative;
-                          top: 20px;
-                          left: 10px;
+    #about {
+              position: relative;
+              min-height: 650px;
+              padding: 40px;
+            }
+    
+    .about-photo {
+                    width: 280px;
+                    border-radius: 12px;
+                  }
+    
+    .about-text {
+                  width: 570px;
+                  margin-left: 320px;
+                }
+    
+    /* Common styling */
+    .floating-img {
+                    position: absolute;
+                    width: 100px;
+                    height: auto;
+                  }
+    
+    /* Upper-left position */
+    .img-left-top {
+                        left: 120px;
+                        bottom: 50px;
+                      }
+    
+    /* First image on right */
+    .img-right-middle-1 {
+                          right: 120px;
+                          top: 310px;
+                        }
+    
+    /* Second image on right */
+    .img-right-middle-2 {
+                          right: 20px;
+                          top: 310px;
                         }
 
-    .about-text {
-                    flex: 1;
-                    }
+    /* Lower-left position */
+    .img-left-bottom {
+                        left: 120px;
+                        bottom: 100px;
+                      }
+    
+    
   </style>
 
 </head>
@@ -55,12 +85,15 @@
   <section id="about">
     <h2>About Me</h2>
 
-  <div class="about-content">
-
-    <div class="about-image">
-      <img src="image/FTW.jpeg" alt="FTW Batch 08">
-    </div>
-
+    <!-- Main photo -->
+    <img src="images/data-science.jpg" class="about-photo" alt="Data Science Scholarship">
+  
+    <!-- Decorative / extra images -->
+    <img src="images/Disney.jpeg" class="floating-img img-left-top" alt="">
+    <img src="images/FTW2.jpeg" class="floating-img img-right-middle-1" alt="">
+    <img src="images/FTW3.jpeg" class="floating-img img-right-middle-2" alt="">
+    <img src="images/Disney.jpeg" class="floating-img img-left-bottom" alt="">
+  
     <div class="about-text">
   
       <p>
@@ -108,7 +141,6 @@
       </p>
     </div>
 
-  </div>
   </section>
 
 
