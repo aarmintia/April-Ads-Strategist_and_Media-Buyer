@@ -66,17 +66,10 @@
 
     #about {
       position: relative;
-
-      /* Wider than the other sections so we have
-         room for photos on the left and right */
       max-width: 1100px;
-
       min-height: 650px;
       padding: 40px;
     }
-
-
-    /* Main About Me text */
 
     .about-text {
       width: 570px;
@@ -90,57 +83,174 @@
 
     .floating-img {
       position: absolute;
-
-      width: 100px;
-      height: 100px;
-
       object-fit: cover;
 
       border-radius: 10px;
       border: 1px solid #ccc;
+
+      /* Makes image feel clickable */
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
 
-    /*
-       IMAGE 1
-       Upper-left
-    */
+    /* Hover effect */
+
+    .floating-img:hover {
+      transform: scale(1.05);
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.30);
+
+      z-index: 10;
+    }
+
+
+    /* =========================
+       UPPER LEFT - Disney
+       ========================= */
 
     .img-left-top {
       left: 70px;
       top: 150px;
+
       width: 200px;
       height: 140px;
+
       object-fit: cover;
       object-position: center;
     }
-    
+
+
+    /* =========================
+       LOWER LEFT - Japan
+       ========================= */
+
     .img-left-bottom {
       left: 100px;
       bottom: 40px;
+
       width: 150px;
       height: 120px;
+
       object-fit: cover;
       object-position: center;
     }
-    
+
+
+    /* =========================
+       UPPER RIGHT - FTW2
+       ========================= */
+
     .img-right-middle-1 {
       right: -20px;
       top: 200px;
+
       width: 200px;
       height: 120px;
+
       object-fit: cover;
+
+      /*
+        Change the percentage if you want
+        to move the crop toward yourself.
+
+        50% = center
+        65% = more toward right
+        75% = even farther right
+      */
       object-position: 65% center;
     }
-    
+
+
+    /* =========================
+       LOWER RIGHT - FTW3
+       ========================= */
+
     .img-right-middle-2 {
       right: 0;
       top: 400px;
+
       width: 110px;
       height: 110px;
+
       object-fit: cover;
       object-position: center;
-      transform: scale(1.25);
+    }
+
+
+    /* =========================
+       IMAGE LIGHTBOX
+       ========================= */
+
+    .image-modal {
+      display: none;
+
+      position: fixed;
+
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      z-index: 9999;
+
+      background-color: rgba(0, 0, 0, 0.88);
+
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+
+    /* Full-size popup image */
+
+    .image-modal img {
+      display: block;
+
+      max-width: 90vw;
+      max-height: 85vh;
+
+      width: auto;
+      height: auto;
+
+      object-fit: contain;
+
+      border: none;
+      border-radius: 10px;
+
+      box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.60);
+    }
+
+
+    /* Close X */
+
+    .modal-close {
+      position: absolute;
+
+      top: 20px;
+      right: 35px;
+
+      color: white;
+
+      font-size: 45px;
+      font-weight: bold;
+      line-height: 1;
+
+      cursor: pointer;
+
+      z-index: 10000;
+    }
+
+    .modal-close:hover {
+      color: #ccc;
     }
 
 
@@ -213,9 +323,6 @@
         margin: 5px 10px;
       }
 
-
-      /* About section */
-
       #about {
         min-height: auto;
         padding: 25px;
@@ -227,10 +334,7 @@
       }
 
 
-      /*
-        On mobile we stop using absolute positioning
-        so the images don't overlap the text.
-      */
+      /* Stop absolute positioning on phones */
 
       .floating-img {
         position: static;
@@ -239,16 +343,33 @@
         height: 120px;
 
         display: inline-block;
+
         margin: 10px;
 
         object-fit: cover;
       }
 
 
-      /* Case studies stack vertically */
-
       .three-columns {
         flex-direction: column;
+      }
+
+
+      /* Smaller X on mobile */
+
+      .modal-close {
+        top: 15px;
+        right: 20px;
+        font-size: 38px;
+      }
+
+      .image-modal {
+        padding: 20px;
+      }
+
+      .image-modal img {
+        max-width: 95vw;
+        max-height: 80vh;
       }
 
     }
@@ -302,20 +423,12 @@
     <h2>About Me</h2>
 
 
-    <!--
-      FLOATING PHOTOS
-
-      Change the file names below depending
-      on the images in your images folder.
-    -->
-
-
     <!-- Upper-left -->
 
     <img
       src="image/Disney.jpeg"
       class="floating-img img-left-top"
-      alt=""
+      alt="Automotive engineering career experience"
     >
 
 
@@ -324,33 +437,34 @@
     <img
       src="image/Japan.jpeg"
       class="floating-img img-left-bottom"
-      alt=""
+      alt="Japan experience"
     >
 
 
-    <!-- Right photo 1 -->
+    <!-- Upper-right -->
 
     <img
       src="image/FTW2.jpeg"
       class="floating-img img-right-middle-1"
-      alt=""
+      alt="Data Science scholarship experience"
     >
 
 
-    <!-- Right photo 2 -->
+    <!-- Lower-right -->
 
     <img
       src="image/FTW3.jpeg"
       class="floating-img img-right-middle-2"
-      alt=""
+      alt="Data Science scholarship experience"
     >
 
 
 
-    <!-- ABOUT TEXT -->
+    <!-- =========================
+         ABOUT TEXT
+         ========================= -->
 
     <div class="about-text">
-
 
       <p>
         I started my career in
@@ -470,7 +584,6 @@
         identify opportunities for optimization, and develop campaigns
         that resonate with the right audiences and ultimately convert.
       </p>
-
 
     </div>
 
@@ -605,6 +718,7 @@
 
     <p>
       LinkedIn:
+
       <a
         href="https://www.linkedin.com/in/aprilarmintia/"
         target="_blank"
@@ -612,6 +726,7 @@
       >
         linkedin.com/in/aprilarmintia
       </a>
+
     </p>
 
   </section>
@@ -629,6 +744,169 @@
     </p>
 
   </footer>
+
+
+
+  <!-- =========================
+       IMAGE POPUP / LIGHTBOX
+       ========================= -->
+
+  <div
+    id="imageModal"
+    class="image-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged image"
+  >
+
+    <!-- Close button -->
+    <span
+      class="modal-close"
+      id="modalClose"
+      aria-label="Close image"
+    >
+      &times;
+    </span>
+
+
+    <!-- Enlarged image -->
+    <img
+      id="modalImage"
+      src=""
+      alt=""
+    >
+
+  </div>
+
+
+
+  <!-- =========================
+       LIGHTBOX JAVASCRIPT
+       ========================= -->
+
+  <script>
+
+    /* Get popup elements */
+
+    const modal =
+      document.getElementById("imageModal");
+
+    const modalImage =
+      document.getElementById("modalImage");
+
+    const closeButton =
+      document.getElementById("modalClose");
+
+
+    /*
+      Select ONLY the four floating About Me photos.
+
+      This means your Human Nature case-study
+      screenshots will NOT open in the popup.
+    */
+
+    const aboutImages =
+      document.querySelectorAll(".floating-img");
+
+
+    /*
+      Open popup when an About Me image is clicked
+    */
+
+    aboutImages.forEach(function(image) {
+
+      image.addEventListener("click", function() {
+
+        /*
+          Use the ORIGINAL image file.
+
+          This means that even if the thumbnail is
+          cropped with object-fit: cover, the popup
+          will show the full original photograph.
+        */
+
+        modalImage.src = this.src;
+
+        modalImage.alt = this.alt;
+
+        modal.style.display = "flex";
+
+
+        /*
+          Prevent the page behind the popup
+          from scrolling.
+        */
+
+        document.body.style.overflow = "hidden";
+
+      });
+
+    });
+
+
+    /*
+      Function for closing the popup
+    */
+
+    function closeModal() {
+
+      modal.style.display = "none";
+
+      modalImage.src = "";
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    /*
+      Close when X is clicked
+    */
+
+    closeButton.addEventListener(
+      "click",
+      closeModal
+    );
+
+
+    /*
+      Close when the dark area outside
+      the photograph is clicked
+    */
+
+    modal.addEventListener(
+      "click",
+      function(event) {
+
+        if (event.target === modal) {
+          closeModal();
+        }
+
+      }
+    );
+
+
+    /*
+      Close when ESC is pressed
+    */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape" &&
+          modal.style.display === "flex"
+        ) {
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+  </script>
 
 
 </body>
