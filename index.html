@@ -1,192 +1,649 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>April's Strategist Portfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
-    header { background: #2c3e50; color: white; padding: 40px; text-align: center; }
-    nav { background: #34495e; padding: 15px; text-align: center; }
-    nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; }
-    section { padding: 50px; max-width: 900px; margin: auto; }
-    h2 { color: #2c3e50; }
-    h3 { color: #e67e22; }
-    footer { background: #2c3e50; color: white; text-align: center; padding: 20px; margin-top: 40px; }
-    .case-study { margin-bottom: 40px; }
-    img { max-width: 100%; border: 1px solid #ccc; margin-top: 15px; }
-    .three-columns { display: flex; justify-content: space-between; gap: 20px; }
-    .case-study { font-size: .85em; flex: 1; text-align: center; margin-bottom: 1px; }
-    .case-study img { margin-top: 1px; max-width: 100%; height: auto; border: 1px solid #ccc; }
-    .caption { font-size: 0.75em;  color: #555;  font-style: italic; margin-top: 10px; }
-    #about {
-              position: relative;
-              min-height: 650px;
-              padding: 40px;
-            }
-    
-    .about-photo {
-                    width: 280px;
-                    border-radius: 12px;
-                  }
-    
-    .about-text {
-                  width: 570px;
-                  margin-left: 320px;
-                }
-    
-    /* Common styling */
-    .floating-img {
-                    position: absolute;
-                    width: 100px;
-                    height: auto;
-                  }
-    
-    /* Upper-left position */
-    .img-left-top {
-                        left: 120px;
-                        bottom: 50px;
-                      }
-    
-    /* First image on right */
-    .img-right-middle-1 {
-                          right: 120px;
-                          top: 310px;
-                        }
-    
-    /* Second image on right */
-    .img-right-middle-2 {
-                          right: 20px;
-                          top: 310px;
-                        }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* Lower-left position */
+  <title>April's Strategist Portfolio</title>
+
+  <style>
+
+    /* =========================
+       GENERAL PAGE STYLING
+       ========================= */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    nav {
+      background: #34495e;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 50px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    h3 {
+      color: #e67e22;
+    }
+
+    img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+    }
+
+
+    /* =========================
+       ABOUT ME
+       ========================= */
+
+    #about {
+      position: relative;
+
+      /* Wider than the other sections so we have
+         room for photos on the left and right */
+      max-width: 1100px;
+
+      min-height: 650px;
+      padding: 40px;
+    }
+
+
+    /* Main About Me text */
+
+    .about-text {
+      width: 570px;
+      margin: 0 auto;
+    }
+
+
+    /* =========================
+       FLOATING ABOUT PHOTOS
+       ========================= */
+
+    .floating-img {
+      position: absolute;
+
+      width: 100px;
+      height: 100px;
+
+      object-fit: cover;
+
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+
+    /*
+       IMAGE 1
+       Upper-left
+    */
+
+    .img-left-top {
+      left: 70px;
+      top: 150px;
+
+      width: 160px;
+      height: 130px;
+    }
+
+
+    /*
+       IMAGE 2
+       Lower-left
+    */
+
     .img-left-bottom {
-                        left: 120px;
-                        bottom: 100px;
-                      }
-    
-    
+      left: 100px;
+      bottom: 40px;
+
+      width: 130px;
+      height: 130px;
+    }
+
+
+    /*
+       IMAGE 3
+       Right side
+    */
+
+    .img-right-middle-1 {
+      right: 120px;
+      top: 300px;
+
+      width: 100px;
+      height: 100px;
+    }
+
+
+    /*
+       IMAGE 4
+       Far-right side
+    */
+
+    .img-right-middle-2 {
+      right: 10px;
+      top: 300px;
+
+      width: 100px;
+      height: 100px;
+    }
+
+
+    /* =========================
+       SERVICES
+       ========================= */
+
+    #services {
+      max-width: 900px;
+    }
+
+
+    /* =========================
+       PORTFOLIO / CASE STUDY
+       ========================= */
+
+    .three-columns {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .case-study {
+      font-size: 0.85em;
+      flex: 1;
+      text-align: center;
+      margin-bottom: 1px;
+    }
+
+    .case-study img {
+      margin-top: 1px;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+
+    .caption {
+      font-size: 0.75em;
+      color: #555;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 768px) {
+
+      section {
+        padding: 25px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px;
+      }
+
+
+      /* About section */
+
+      #about {
+        min-height: auto;
+        padding: 25px;
+      }
+
+      .about-text {
+        width: 100%;
+        margin: 0;
+      }
+
+
+      /*
+        On mobile we stop using absolute positioning
+        so the images don't overlap the text.
+      */
+
+      .floating-img {
+        position: static;
+
+        width: 140px;
+        height: 120px;
+
+        display: inline-block;
+        margin: 10px;
+
+        object-fit: cover;
+      }
+
+
+      /* Case studies stack vertically */
+
+      .three-columns {
+        flex-direction: column;
+      }
+
+    }
+
   </style>
 
 </head>
+
+
 <body>
+
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
   <header>
+
     <h1>April's Strategist Portfolio</h1>
-    <p>Training to be an Ads Strategist & Media Buyer</p>
+
+    <p>
+      Training to be an Ads Strategist & Media Buyer
+    </p>
+
   </header>
 
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+
   <nav>
+
     <a href="#about">About</a>
+
     <a href="#services">Services</a>
+
     <a href="#portfolio">Portfolio</a>
+
     <a href="#contact">Contact</a>
+
   </nav>
 
+
+  <!-- =========================
+       ABOUT ME
+       ========================= -->
+
   <section id="about">
+
     <h2>About Me</h2>
 
-    <!-- Main photo -->
-    <img src="images/data-science.jpg" class="about-photo" alt="Data Science Scholarship">
-  
-    <!-- Decorative / extra images -->
-    <img src="images/Disney.jpeg" class="floating-img img-left-top" alt="">
-    <img src="images/FTW2.jpeg" class="floating-img img-right-middle-1" alt="">
-    <img src="images/FTW3.jpeg" class="floating-img img-right-middle-2" alt="">
-    <img src="images/Disney.jpeg" class="floating-img img-left-bottom" alt="">
-  
+
+    <!--
+      FLOATING PHOTOS
+
+      Change the file names below depending
+      on the images in your images folder.
+    -->
+
+
+    <!-- Upper-left -->
+
+    <img
+      src="images/Disney.jpeg"
+      class="floating-img img-left-top"
+      alt="Career experience"
+    >
+
+
+    <!-- Lower-left -->
+
+    <img
+      src="images/Disney.jpeg"
+      class="floating-img img-left-bottom"
+      alt="Career experience"
+    >
+
+
+    <!-- Right photo 1 -->
+
+    <img
+      src="images/FTW2.jpeg"
+      class="floating-img img-right-middle-1"
+      alt="Data Science experience"
+    >
+
+
+    <!-- Right photo 2 -->
+
+    <img
+      src="images/FTW3.jpeg"
+      class="floating-img img-right-middle-2"
+      alt="Data Science experience"
+    >
+
+
+
+    <!-- ABOUT TEXT -->
+
     <div class="about-text">
-  
+
+
       <p>
-        I started my career in <strong>2014 as a Product Design Engineer in the automotive industry</strong>, 
-        designing systems, solving technical problems, and collaborating with global teams. In 
-        <strong>2017, I was deployed to our Japan branch</strong>, an experience that strengthened both my 
-        technical expertise and my ability to work in an international environment. Over nearly nine years 
-        in engineering, I developed a strong analytical mindset, attention to detail, and a structured 
+        I started my career in
+        <strong>
+          2014 as a Product Design Engineer in the automotive industry
+        </strong>,
+        designing systems, solving technical problems, and collaborating
+        with global teams.
+
+        In
+        <strong>
+          2017, I was deployed to our Japan branch
+        </strong>,
+        an experience that strengthened both my technical expertise and
+        my ability to work in an international environment.
+
+        Over nearly nine years in engineering, I developed a strong
+        analytical mindset, attention to detail, and a structured
         approach to problem-solving.
       </p>
-    
+
+
       <p>
-        During the <strong>pandemic</strong>, I became increasingly interested in <strong>data and analytics</strong>. 
-        What started as curiosity gradually became a new career direction. In <strong>2023, I decided to 
-        leave engineering</strong> and take the leap into a different field. That same year, I was accepted 
-        into a <strong>Data Science scholarship program</strong>, where I built my foundation in data analysis 
-        and began translating my engineering problem-solving skills into data-driven work.
+        During the
+        <strong>pandemic</strong>,
+        I became increasingly interested in
+        <strong>data and analytics</strong>.
+
+        What started as curiosity gradually became a new career direction.
+
+        In
+        <strong>
+          2023, I decided to leave engineering
+        </strong>
+        and take the leap into a different field.
+
+        That same year, I was accepted into a
+        <strong>
+          Data Science scholarship program
+        </strong>,
+        where I built my foundation in data analysis and began translating
+        my engineering problem-solving skills into data-driven work.
       </p>
-    
+
+
       <p>
-        In <strong>2024, I landed a role as a Reporting Analyst</strong>, officially beginning my career 
-        in analytics. Since then, I’ve been designing dashboards, automating reporting processes, and 
-        turning complex datasets into clear, actionable insights that help the business make better decisions.
+        In
+        <strong>
+          2024, I landed a role as a Reporting Analyst
+        </strong>,
+        officially beginning my career in analytics.
+
+        Since then, I've been designing dashboards, automating reporting
+        processes, and turning complex datasets into clear, actionable
+        insights that help the business make better decisions.
       </p>
-    
+
+
       <p>
-        In <strong>2026, I expanded my focus into digital advertising strategy and media buying</strong>. 
-        I enrolled in the 
-        <a href="https://www.facebook.com/facebookadsmasteryacademy" target="_blank" rel="noopener noreferrer">FAMA</a> 
-        Elite Meta Ads Masterclass to develop my skills as an <strong>FB Ads Strategist and Media Buyer</strong>. 
+        In
+        <strong>
+          2026, I expanded my focus into digital advertising strategy
+          and media buying
+        </strong>.
+
+        I enrolled in the
+
+        <a
+          href="https://www.facebook.com/facebookadsmasteryacademy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          FAMA
+        </a>
+
+        Elite Meta Ads Masterclass to develop my skills as an
+
+        <strong>
+          FB Ads Strategist and Media Buyer
+        </strong>.
       </p>
-    
+
+
       <p>
-        Looking back, my career has evolved from 
-        <strong>engineering → analytics → digital advertising</strong>, but the common thread has always 
-        been problem-solving through data and structured thinking.
+        Looking back, my career has evolved from
+
+        <strong>
+          engineering → analytics → digital advertising
+        </strong>,
+
+        but the common thread has always been problem-solving through
+        data and structured thinking.
       </p>
-    
+
+
       <p>
-        My goal now is to bridge <strong>analytics and advertising</strong> — combining my analytical 
-        background with advertising strategy to understand not only <strong>what the numbers are saying</strong>, 
-        but also <strong>what actions to take because of them</strong>. I want to use data to guide smarter 
-        ad spend decisions, identify opportunities for optimization, and develop campaigns that resonate 
-        with the right audiences and ultimately convert.
+        My goal now is to bridge
+
+        <strong>
+          analytics and advertising
+        </strong>
+
+        — combining my analytical background with advertising strategy
+        to understand not only
+
+        <strong>
+          what the numbers are saying
+        </strong>,
+
+        but also
+
+        <strong>
+          what actions to take because of them
+        </strong>.
+
+        I want to use data to guide smarter ad spend decisions,
+        identify opportunities for optimization, and develop campaigns
+        that resonate with the right audiences and ultimately convert.
       </p>
+
+
     </div>
 
   </section>
 
+
+
+  <!-- =========================
+       SERVICES
+       ========================= -->
 
   <section id="services">
+
     <h2>Services Offered</h2>
+
     <ul>
+
       <li>Market Research Reports</li>
+
       <li>Awareness Analysis</li>
+
       <li>Messaging Strategy</li>
+
       <li>Ad Strategy Proposals</li>
+
     </ul>
+
   </section>
+
+
+
+  <!-- =========================
+       PORTFOLIO
+       ========================= -->
 
   <section id="portfolio">
+
     <h2>Human Nature Case Study</h2>
-    <p>Applying the 3Ms of Marketing framework to Human Nature ads.</p>
-  
+
+    <p>
+      Applying the 3Ms of Marketing framework to Human Nature ads.
+    </p>
+
+
     <div class="three-columns">
+
+
+      <!-- MARKET DESIRE -->
+
       <div class="case-study">
+
         <h3>Market Desire</h3>
-        <img src="image/market-desire.png" alt="Human Nature Market Desire Analysis" width="500">
-        <p class="caption">In this case study, I analyzed Human Nature’s ads to identify customer desires. The messaging reflects a demand for natural personal care and Filipino-made authenticity, tied to wellness and eco-conscious pride.</p>
+
+        <img
+          src="image/market-desire.png"
+          alt="Human Nature Market Desire Analysis"
+        >
+
+        <p class="caption">
+          In this case study, I analyzed Human Nature's ads to identify
+          customer desires. The messaging reflects a demand for natural
+          personal care and Filipino-made authenticity, tied to wellness
+          and eco-conscious pride.
+        </p>
+
       </div>
-  
+
+
+
+      <!-- MARKET AWARENESS -->
+
       <div class="case-study">
+
         <h3>Market Awareness</h3>
-        <img src="image/market-awareness.png" alt="Human Nature Market Awareness Analysis" width="500">
-        <p class="caption">My analysis showed Human Nature’s ads span different awareness stages — from problem-aware to most aware. This demonstrates broad positioning but also highlights the risk of diluted focus.</p>
+
+        <img
+          src="image/market-awareness.png"
+          alt="Human Nature Market Awareness Analysis"
+        >
+
+        <p class="caption">
+          My analysis showed Human Nature's ads span different awareness
+          stages — from problem-aware to most aware. This demonstrates
+          broad positioning but also highlights the risk of diluted focus.
+        </p>
+
       </div>
-  
+
+
+
+      <!-- MARKET SOPHISTICATION -->
+
       <div class="case-study">
+
         <h3>Market Sophistication</h3>
-        <img src="image/market-sophistication.png" alt="Human Nature Market Sophistication Analysis" width="500">
-        <p class="caption">Reviewing Human Nature’s messaging, I found they lean into unique benefit positioning (locally made, eco-conscious) and sometimes reach identity-driven storytelling (Filipino pride). This helps them differentiate from generic wellness brands.</p>
+
+        <img
+          src="image/market-sophistication.png"
+          alt="Human Nature Market Sophistication Analysis"
+        >
+
+        <p class="caption">
+          Reviewing Human Nature's messaging, I found they lean into
+          unique benefit positioning (locally made, eco-conscious) and
+          sometimes reach identity-driven storytelling (Filipino pride).
+          This helps them differentiate from generic wellness brands.
+        </p>
+
       </div>
+
+
     </div>
+
   </section>
+
+
+
+  <!-- =========================
+       CONTACT
+       ========================= -->
 
   <section id="contact">
+
     <h2>Let's Connect</h2>
-    <p>Email: <a href="mailto:aprilarmintia@gmail.com">aprilarmintia@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/aprilarmintia/">linkedin.com/in/aprilarmintia</a></p>
+
+    <p>
+      Email:
+      <a href="mailto:aprilarmintia@gmail.com">
+        aprilarmintia@gmail.com
+      </a>
+    </p>
+
+    <p>
+      LinkedIn:
+      <a
+        href="https://www.linkedin.com/in/aprilarmintia/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        linkedin.com/in/aprilarmintia
+      </a>
+    </p>
+
   </section>
 
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
   <footer>
-    <p>© 2026 April | Ads Strategist & Media Buyer</p>
+
+    <p>
+      © 2026 April | Ads Strategist & Media Buyer
+    </p>
+
   </footer>
+
+
 </body>
+
 </html>
