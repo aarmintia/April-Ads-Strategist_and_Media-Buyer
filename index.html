@@ -9,6 +9,16 @@
 
   <style>
 
+    :root {
+      --forest: #4F6B4D;
+      --sage: #7A8C63;
+      --stone: #C7C2AE;
+      --clay: #8B6B4A;
+      --deep-forest: #1F2A24;
+      --page-bg: #f7f6f2;
+      --text: #30382f;
+    }
+
     /* ==================================================
        GENERAL PAGE STYLING
        ================================================== */
@@ -24,8 +34,8 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f9f9f9;
-      color: #333;
+      background: var(--page-bg);
+      color: var(--text);
     }
 
 
@@ -34,7 +44,7 @@
        ================================================== */
 
     header {
-      background: #2c3e50;
+      background: var(--deep-forest);
       color: white;
       padding: 40px 20px;
       text-align: center;
@@ -63,7 +73,7 @@
        ================================================== */
 
     nav {
-      background: #34495e;
+      background: var(--forest);
       padding: 15px;
       text-align: center;
     }
@@ -91,16 +101,29 @@
     }
 
     h2 {
-      color: #2c3e50;
+      color: var(--forest);
       margin-top: 0;
     }
 
     h3 {
-      color: #e67e22;
+      color: var(--clay);
     }
 
     img {
       max-width: 100%;
+    }
+
+    a {
+      color: var(--forest);
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--clay);
+    }
+
+    nav a {
+      color: white;
     }
 
 
@@ -182,7 +205,7 @@
       object-fit: cover;
 
       border-radius: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid var(--stone);
 
       cursor: pointer;
 
@@ -296,7 +319,7 @@
 
 
     .modal-close:hover {
-      color: #ccc;
+      color: var(--stone);
     }
 
 
@@ -342,13 +365,13 @@
       width: 100%;
       height: auto;
 
-      border: 1px solid #ccc;
+      border: 1px solid var(--stone);
     }
 
 
     .caption {
       font-size: 0.75em;
-      color: #555;
+      color: var(--sage);
       font-style: italic;
       margin-top: 10px;
     }
@@ -368,7 +391,7 @@
        ================================================== */
 
     footer {
-      background: #2c3e50;
+      background: var(--deep-forest);
       color: white;
 
       text-align: center;
